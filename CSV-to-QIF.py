@@ -90,9 +90,10 @@ def writeFile(date_,amount_,memo_,payee_, filelocation_):
     outFile.write(memo_)
     outFile.write("\n")
 
-    outFile.write("P")  #Payee line
-    outFile.write(payee_)
-    outFile.write("\n")
+    if(payee_!=-1):
+        outFile.write("P")  #Payee line
+        outFile.write(payee_)
+        outFile.write("\n")
 
     outFile.write("^\n")  #The last line of each transaction starts with a Caret to mark the end
     outFile.close()
